@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
             li.textContent = taskText;
 
             // Create remove button
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.className = 'remove-btn';
-            removeButton.addEventListener('click', function() {
+            const remove = document.createElement('button');
+            remove.textContent = 'Remove';
+            remove.className = 'remove-btn';
+            remove.addEventListener('onclick', function() {
                 li.remove();
             });
 
             // Append remove button to list item
-            li.appendChild(removeButton);
+            li.appendChild(remove-btn);
 
             // Append list item to task list
             taskList.appendChild(li);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener for Add Task button
-    addButton.addEventListener('click', addTask);
+    addButton.addEventListener('onclick', addTask);
 
     // Event listener for Enter key press
     taskInput.addEventListener('keypress', function(e) {
