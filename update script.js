@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    // Function to load tasks from Local Storage
+    // load tasks from Local Storage
     function loadTasks() {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
     }
 
-    // Function to add a new task
+    // add a new task
     function addTask(taskText, save = true) {
         // Create new list item
         const li = document.createElement('li');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to remove task from Local Storage
+    // remove task from Local Storage
     function removeTaskFromLocalStorage(taskText) {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         const updatedTasks = storedTasks.filter(task => task !== taskText);
