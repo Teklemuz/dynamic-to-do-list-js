@@ -16,21 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
             li.textContent = taskText;
 
             // Create remove button
-            const remove = document.createElement('button');
-            remove.textContent = 'Remove';
-            remove.className = 'remove-btn';
-            remove.addEventListener('onclick', function() {
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.className = 'remove-btn';
+            removeButton.addEventListener('click', function() {
                 li.remove();
             });
 
             // Append remove button to list item
-            li.appendChild(remove-btn);
+            li.appendChild(removeButton);
 
             // Append list item to task list
             taskList.appendChild(li);
 
             // Clear the task input
             taskInput.value = '';
+
+            // Optional: Add a class to the new list item for styling
+            li.classList.add('task-item');
         } else {
             // Alert user if task input is empty
             alert('Please enter a task.');
@@ -38,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener for Add Task button
-    addButton.addEventListener('onclick', addTask);
+    addButton.addEventListener('click', addTask);
 
     // Event listener for Enter key press
     taskInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
+        if (event.key === 'Enter') {
             addTask();
         }
     });
@@ -50,4 +53,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial invocation of addTask on page load
     addTask();
 });
-
