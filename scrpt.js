@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Selecting DOM elements
+    //Selecting DOM elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    // loading tasks from Local Storage
+    //loading tasks from Local Storage
     function loadTasks() {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
     }
 
-    // adding a new task
+    //adding a new task
     function addTask(taskText, save = true) {
         // Create new list item
         const li = document.createElement('li');
