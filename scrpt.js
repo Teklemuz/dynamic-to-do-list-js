@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
     }
 
-    //adding a new task
+    // Creating the addtask function
     function addTask(taskText, save = true) {
         // Create new list item
         const li = document.createElement('li');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             removeTaskFromLocalStorage(taskText);
         });
 
-        // Appending remove button to list item
+        // Appending the remove button to list element
         li.appendChild(removeButton);
 
         // Appending list item to task list
@@ -60,6 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initial invocation of loadTasks on page load
+    // Invoking of loadTasks on page load
     loadTasks();
 });
